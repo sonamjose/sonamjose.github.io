@@ -148,6 +148,41 @@
     }
     .btn .arrow{ opacity: .9; transform: translateY(1px); }
 
+    .about-stats{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:12px;
+  margin: 18px 0;
+}
+
+.stat-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.stat-card strong{
+  display:block;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.stat-card span{
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .about-stats{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
     /* Hero */
     .hero{
       padding: 56px 0 28px;
@@ -403,66 +438,62 @@
         <a class="btn" href="https://www.linkedin.com/in/sona-maria-jose" target="_blank" rel="noreferrer">LinkedIn</a>
         <a class="btn" href="https://github.com/sonamjose" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-    </section>
-
-    <section class="card d1" id="about">
+<section class="card d1" id="about">
   <div class="section-title">
     <h2>About</h2>
-  <div>
+    <span class="hint">Story. Values. Proof.</span>
+  </div>
 
-  <p>
-    <strong>From Curiosity to Systems That Matter</strong>
-  </p>
-  <p>
+  <!-- STORY -->
+  <p class="desc">
+    <strong>From curiosity to systems that matter.</strong><br>
     My journey into engineering began with curiosity about how raw data could be
-    transformed into insights that actually influence decisions. Early in my career
-    at Cognizant Technology Solutions, I worked as a Data Engineer building PySpark
-    ETL pipelines, automating cloud integrations, and creating Power BI dashboards
-    used by business teams. Seeing people rely on these systems taught me that good
-    engineering is not just about writing code, but about building trust through
-    reliability, clarity, and performance.
-  </p>
-  <p>
-    That experience pushed me to look deeper than dashboards and pipelines. I wanted
-    to understand how intelligent systems make decisions and how they behave under
-    real-world constraints. This led me to pursue my Master’s degree in Electrical
-    and Computer Engineering at the University of Florida, graduating in May 2026,
-    where I expanded into machine learning, data science, and safe autonomous systems.
+    transformed into insights that influence real decisions. At Cognizant Technology
+    Solutions, I worked as a Data Engineer building PySpark ETL pipelines, automating
+    cloud integrations, and creating Power BI dashboards used by business teams.
+    Working close to production systems taught me how reliability, clarity, and
+    performance directly create value and trust.
   </p>
 
-  <p>
-    <strong>What Drives Me</strong>
-  </p>
-  <p>
-    I’m driven by building systems that work beyond demos and experiments. Pipelines
-    that scale cleanly, models that perform reliably in production, and software
-    that teams can depend on over time. I’m especially excited by work at the
-    intersection of data, AI, and systems engineering, where thoughtful design
-    decisions directly impact performance, safety, and user trust.
+  <p class="desc">
+    This pushed me to look deeper into how intelligent systems make decisions. I’m
+    currently pursuing my Master’s degree in Electrical and Computer Engineering at
+    the University of Florida (May 2026), where I focus on machine learning, data
+    science, and safe autonomous systems, bridging models with real-world systems.
   </p>
 
-  <p>
-    <strong>How I Think About Engineering</strong>
-  </p>
-  <p>
-    I believe the best engineering starts with deeply understanding the problem
-    before choosing the tools. Whether I’m designing cloud-native platforms,
-    training machine learning models, or building IoT systems with ESP32 and AWS
-    IoT Core, I focus on creating solutions that are clean, scalable, and
-    production-ready.
-  </p>
-  <p>
-    I enjoy working in the space where intelligent algorithms meet real systems,
-    where research-grade ideas are shaped into maintainable software that creates
-    measurable value.
+  <p class="desc">
+    I believe engineering creates impact when systems are built cleanly, designed
+    end to end, and trusted in production. My goal is to build scalable data and AI
+    systems that teams can rely on to make confident decisions.
   </p>
 
+  <!-- STAT CARDS -->
+  <div class="about-stats">
+    <div class="stat-card">
+      <strong>3.6+</strong>
+      <span>CGPA (ECE, UF)</span>
+    </div>
+    <div class="stat-card">
+      <strong>15+</strong>
+      <span>BI Dashboards</span>
+    </div>
+    <div class="stat-card">
+      <strong>90%+</strong>
+      <span>ML Project Scores</span>
+    </div>
+    <div class="stat-card">
+      <strong>10+</strong>
+      <span>End-to-End Projects</span>
+    </div>
+  </div>
 
+  <!-- HIGHLIGHTS -->
   <div class="chips" aria-label="Highlights">
-    <span class="chip">Data Engineering and Analytics</span>
-    <span class="chip">Data Science</span>
-    <span class="chip">ML/ DL / Safe RL</span>
     <span class="chip">Software Engineering</span>
+    <span class="chip">Data Engineering</span>
+    <span class="chip">Data Analytics</span>
+    <span class="chip">Machine Learning</span>
     <span class="chip">Cloud & IoT</span>
   </div>
 </section>
@@ -631,6 +662,7 @@
   </script>
 </body>
 </html>
+
 
 
 
