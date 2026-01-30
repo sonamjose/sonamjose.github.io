@@ -359,6 +359,85 @@
       border-color: color-mix(in oklab, var(--accent) 38%, rgba(255,255,255,.12));
       color: var(--text);
     }
+    /* Projects - Vertical list of horizontal cards */
+.proj-list{
+  display: grid;
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.proj{
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 14px;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.proj-left h3{
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.proj-sub{
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.proj-desc{
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.proj-meta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.tag{
+  font-size: 0.78rem;
+  font-weight: 900;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.6);
+}
+
+.proj-links{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.plink{
+  font-weight: 900;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  transition: .18s ease;
+}
+.plink:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.10);
+}
+
+/* Mobile */
+@media (max-width: 900px){
+  .proj{ grid-template-columns: 1fr; }
+}
+
 
     /* Footer */
     footer{
@@ -541,53 +620,255 @@
           </div>
         </section>
 
-        <section class="card d3" id="projects">
-          <div class="section-title">
-            <h2>Featured Projects</h2>
-          </div>
+        <!-- PROJECTS (Vertical + Horizontal Cards) -->
+<section class="card d2" id="projects">
+  <div class="section-title">
+    <h2>Projects</h2>
+    <span class="hint">Best → Least important (ML/DL first)</span>
+  </div>
 
-          <div class="list">
-            <article class="item">
-              <h3>Safe RL: PPO-Lag vs FOCOPS (Policy Safety Verification)</h3>
-              <div class="meta">
-                <span><i></i> Safety Gymnasium</span>
-                <span><i></i> Python</span>
-                <span><i></i> Research / Engineering</span>
-              </div>
-              <p class="desc">
-                1–2 lines: what you built + measurable result. Add a GitHub link if public.
-              </p>
-              <div class="chips">
-                <span class="chip">PPO-Lag</span><span class="chip">FOCOPS</span><span class="chip">Evaluation</span>
-              </div>
-            </article>
+  <div class="proj-list">
 
-            <article class="item">
-              <h3>Power BI: End-to-End KPI Dashboard + Semantic Model</h3>
-              <div class="meta">
-                <span><i></i> DAX / RLS</span>
-                <span><i></i> Data Modeling</span>
-                <span><i></i> Performance</span>
-              </div>
-              <p class="desc">
-                Mention the dataset, governance, and a real business metric (refresh time, adoption, decision speed).
-              </p>
-            </article>
-
-            <article class="item">
-              <h3>Red-Black Tree: Plate Management System</h3>
-              <div class="meta">
-                <span><i></i> Python</span>
-                <span><i></i> Data Structures</span>
-                <span><i></i> File I/O</span>
-              </div>
-              <p class="desc">
-                Explain what it supports (insert/remove/range queries) and constraints (no libraries).
-              </p>
-            </article>
-          </div>
-        </section>
+    <!-- 1) DL: Faster R-CNN Digit Detection -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Handwritten Digit Detection (Faster R-CNN)</h3>
+        <p class="proj-sub">Deep Learning • Object Detection • PyTorch</p>
       </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Built an end-to-end Faster R-CNN (ResNet50-FPN) pipeline for digit localization + classification with a custom dataset loader
+          handling variable boxes and edge cases. Tuned training with AdamW, LR scheduling, gradient clipping, and early stopping; evaluated
+          using IoU and confidence-based rejection.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">PyTorch</span>
+          <span class="tag">Faster R-CNN</span>
+          <span class="tag">ResNet50-FPN</span>
+          <span class="tag">IoU</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2) DL: Medical Imaging -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Medical Imaging Classification (ChestMNIST & RetinaMNIST)</h3>
+        <p class="proj-sub">Deep Learning • CNN • TensorFlow</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Designed CNN models for multi-label chest X-ray classification and multi-class retina disease detection. Implemented early stopping,
+          checkpointing, and learning-rate scheduling. Reported accuracy and AUC, plus class-imbalance analysis with confusion matrices and per-class F1.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">TensorFlow</span>
+          <span class="tag">CNN</span>
+          <span class="tag">AUC</span>
+          <span class="tag">Evaluation</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3) ML: Satellite Ship Detection -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Satellite Ship Detection (PCA + Manifold Learning)</h3>
+        <p class="proj-sub">Machine Learning • Dimensionality Reduction • Random Forest</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Built classification pipelines on 19,200-D PlanetScope imagery features. Reduced dimensionality using PCA while preserving variance,
+          compared PCA vs ISOMAP/LLE stability tradeoffs, and benchmarked Random Forest performance with reduced overfitting and faster training.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">PCA</span>
+          <span class="tag">ISOMAP</span>
+          <span class="tag">LLE</span>
+          <span class="tag">Random Forest</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4) Safe RL: PPO-Lag vs FOCOPS -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Safe RL: PPO-Lag vs FOCOPS (Policy Safety Verification)</h3>
+        <p class="proj-sub">Safe Reinforcement Learning • Safety Gymnasium • Interpretability</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Trained safe RL agents under CMDP constraints across multiple safety levels and evaluated reward-cost tradeoffs using large-scale
+          episode rollouts. Planned/used VIPER to distill deep policies into interpretable decision trees for global explainability and verification.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Safety Gymnasium</span>
+          <span class="tag">PPO-Lag</span>
+          <span class="tag">FOCOPS</span>
+          <span class="tag">VIPER</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5) RL: DQN Study -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>DQN Optimization Study (CartPole-v1)</h3>
+        <p class="proj-sub">Reinforcement Learning • Deep Q-Network • Experimentation</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Implemented DQN with experience replay and ε-greedy exploration. Ran controlled hyperparameter sweeps (learning rate, batch size, discount factor)
+          and analyzed convergence using reward trajectories and MSE loss curves to identify stable vs unstable regimes.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Gym</span>
+          <span class="tag">DQN</span>
+          <span class="tag">Replay Buffer</span>
+          <span class="tag">Hyperparameter Tuning</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6) Systems: Kubernetes Autoscaling -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Hierarchical Kubernetes Autoscaling System (CloudLab)</h3>
+        <p class="proj-sub">Distributed Systems • Cloud Infrastructure • Control + Observability</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Designed a two-tier autoscaling framework with local controllers for resource allocation and a global controller for cluster-level optimization.
+          Built an observability pipeline (metrics + logs) for real-time monitoring across nodes to validate stability under dynamic workloads.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Python</span>
+          <span class="tag">CloudLab</span>
+          <span class="tag">Fluent Bit</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7) IoT: Environmental Monitoring -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>IoT Server Room Environmental Monitoring (ESP32 + AWS IoT Core)</h3>
+        <p class="proj-sub">IoT • MQTT Security • Cloud Integration</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Built an ESP32-based temperature/humidity monitoring system publishing securely to AWS IoT Core via MQTT. Implemented certificate-based auth,
+          ingestion to cloud, and alert-ready design; analyzed key storage risks and explored crypto co-processor support for secure device identity.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">ESP32</span>
+          <span class="tag">AWS IoT Core</span>
+          <span class="tag">MQTT</span>
+          <span class="tag">TLS</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+          <a class="plink" href="#" target="_blank">Report</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 8) Data Analytics: Cleaning + Dashboards -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Data Cleaning + Analytics Dashboards</h3>
+        <p class="proj-sub">Data Analytics • SQL/Python • Power BI</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Cleaned messy datasets with reproducible Python/SQL pipelines (missing values, dedup, type fixes, outlier handling), then delivered
+          stakeholder-ready Power BI dashboards with KPI definitions, drilldowns, and trend insights.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Data Quality</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 9) Reverse Engineering / Computer Architecture -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Computer Architecture + Reverse Engineering Labs</h3>
+        <p class="proj-sub">Low-level Systems • Security Mindset</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Hands-on labs analyzing machine-level behavior and system internals, focusing on how software executes at the hardware boundary and how
+          vulnerabilities emerge. Documented findings clearly with repeatable steps and practical security takeaways.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Assembly</span>
+          <span class="tag">Debugging</span>
+          <span class="tag">Binary Analysis</span>
+          <span class="tag">Security</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="#" target="_blank">Notes</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 10) Red-Black Tree (Data Structures Project) -->
+    <article class="proj">
+      <div class="proj-left">
+        <h3>Red-Black Tree License Plate Manager</h3>
+        <p class="proj-sub">Data Structures • Python • File I/O</p>
+      </div>
+      <div class="proj-right">
+        <p class="proj-desc">
+          Implemented a Red-Black Tree from scratch (no libraries) to manage broomstick license plates with insert, delete, lookup,
+          revenue reporting, and range queries. Built file-based input/output and made it runnable on UF’s server with a makefile-style workflow.
+        </p>
+        <div class="proj-meta">
+          <span class="tag">Red-Black Tree</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Python</span>
+          <span class="tag">Range Queries</span>
+        </div>
+        <div class="proj-links">
+          <a class="plink" href="https://github.com/sonamjose/sona_projects/tree/main/data_structures/Red_Black_Tree_implementation" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
 
       <!-- RIGHT: Skills + Education + Extras -->
       <aside style="display:grid; gap:18px;">
@@ -685,6 +966,7 @@
   </script>
 </body>
 </html>
+
 
 
 
