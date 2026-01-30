@@ -550,48 +550,149 @@
    <section class="card d3" id="projects">
           <div class="section-title">
             <h2>Featured Projects</h2>
-            <span class="hint">3–6 max. Best ones only.</span>
+           
           </div>
 
           <div class="list">
             <article class="item">
-              <h3>Safe RL: PPO-Lag vs FOCOPS (Policy Safety Verification)</h3>
-              <div class="meta">
-                <span><i></i> Safety Gymnasium</span>
-                <span><i></i> Python</span>
-                <span><i></i> Research / Engineering</span>
-              </div>
-              <p class="desc">
-                1–2 lines: what you built + measurable result. Add a GitHub link if public.
-              </p>
-              <div class="chips">
-                <span class="chip">PPO-Lag</span><span class="chip">FOCOPS</span><span class="chip">Evaluation</span>
-              </div>
-            </article>
+  <h3>Safe Reinforcement Learning & Policy Interpretability</h3>
+  <div class="meta">
+    <span><i></i> PPO-Lag · FOCOPS</span>
+    <span><i></i> Safety Gymnasium</span>
+    <span><i></i> Python · Safe RL</span>
+  </div>
+  <p class="desc">
+    Trained and evaluated safe RL agents (PPO-Lag, FOCOPS) under increasing CMDP safety constraints,
+    analyzing reward–cost tradeoffs across 1,000+ trajectories per agent. Applied VIPER to distill
+    neural policies into interpretable decision trees, demonstrating reduced safety violations
+    while preserving task performance.
+  </p>
+  <div class="chips">
+    <span class="chip">Safe RL</span>
+    <span class="chip">Explainability</span>
+    <span class="chip">CMDPs</span>
+  </div>
+</article>
 
             <article class="item">
-              <h3>Power BI: End-to-End KPI Dashboard + Semantic Model</h3>
-              <div class="meta">
-                <span><i></i> DAX / RLS</span>
-                <span><i></i> Data Modeling</span>
-                <span><i></i> Performance</span>
-              </div>
-              <p class="desc">
-                Mention the dataset, governance, and a real business metric (refresh time, adoption, decision speed).
-              </p>
-            </article>
+  <h3>Handwritten Digit Detection with Faster R-CNN</h3>
+  <div class="meta">
+    <span><i></i> PyTorch</span>
+    <span><i></i> CNNs · Object Detection</span>
+    <span><i></i> Computer Vision</span>
+  </div>
+  <p class="desc">
+    Built an end-to-end object detection pipeline using Faster R-CNN (ResNet-50-FPN) for handwritten
+    digit localization and classification. Implemented custom PyTorch datasets, robust preprocessing,
+    and confidence-based rejection to improve reliability under ambiguous inputs.
+  </p>
+  <div class="chips">
+    <span class="chip">Deep Learning</span>
+    <span class="chip">Faster R-CNN</span>
+    <span class="chip">PyTorch</span>
+  </div>
+</article>
 
+
+           <article class="item">
+  <h3>Production-Grade Kubernetes Feedback Control System</h3>
+  <div class="meta">
+    <span><i></i> Kubernetes · CloudLab</span>
+    <span><i></i> Control Theory</span>
+    <span><i></i> Python</span>
+  </div>
+  <p class="desc">
+    Designed and deployed a real Kubernetes cluster on CloudLab and modeled it as a closed-loop
+    control system for CPU regulation. Derived a first-order system model (R² = 0.977) from live
+    telemetry and implemented PI and global controllers to maintain stable utilization under
+    dynamic workloads without oscillations.
+  </p>
+  <div class="chips">
+    <span class="chip">Distributed Systems</span>
+    <span class="chip">Control Systems</span>
+    <span class="chip">Cloud Infrastructure</span>
+  </div>
+</article>
             <article class="item">
-              <h3>Red-Black Tree: Plate Management System</h3>
-              <div class="meta">
-                <span><i></i> Python</span>
-                <span><i></i> Data Structures</span>
-                <span><i></i> File I/O</span>
-              </div>
-              <p class="desc">
-                Explain what it supports (insert/remove/range queries) and constraints (no libraries).
-              </p>
-            </article>
+  <h3>NYC Taxi Trip Analytics & Demand Prediction</h3>
+  <div class="meta">
+    <span><i></i> Python · SQL</span>
+    <span><i></i> NYC Taxi & Limousine Commission</span>
+    <span><i></i> Data Cleaning · Predictive Analytics</span>
+  </div>
+  <p class="desc">
+    Built an end-to-end analytics pipeline using NYC Taxi trip data to clean, validate,
+    and model large-scale real-world transportation records. Performed extensive data
+    cleaning to handle missing values, invalid coordinates, outliers, and inconsistent
+    timestamps, then engineered temporal and geospatial features to predict trip demand
+    and fare behavior using regression models.
+  </p>
+  <div class="chips">
+    <span class="chip">EDA</span>
+    <span class="chip">Feature Engineering</span>
+    <span class="chip">Forecasting</span>
+    <span class="chip">Real-World Data</span>
+  </div>
+</article>
+<article class="item">
+  <h3>Medical Image Classification with CNNs</h3>
+  <div class="meta">
+    <span><i></i> TensorFlow</span>
+    <span><i></i> ChestMNIST · RetinaMNIST</span>
+    <span><i></i> Medical Imaging</span>
+  </div>
+  <p class="desc">
+    Designed and trained CNN architectures for multi-label chest X-ray and retinal disease
+    classification. Achieved 94.8% accuracy (AUC 0.75) on ChestMNIST and conducted rigorous
+    evaluation using per-class F1, confusion matrices, and learning-curve diagnostics.
+  </p>
+  <div class="chips">
+    <span class="chip">CNNs</span>
+    <span class="chip">Medical AI</span>
+    <span class="chip">Model Evaluation</span>
+  </div>
+</article>
+<article class="item">
+  <h3>Satellite Ship Detection via Dimensionality Reduction</h3>
+  <div class="meta">
+    <span><i></i> PCA · ISOMAP · LLE</span>
+    <span><i></i> Random Forest</span>
+    <span><i></i> Remote Sensing</span>
+  </div>
+  <p class="desc">
+    Built classification pipelines for ship detection using 19,200-dimensional satellite imagery.
+    Reduced dimensionality by >99% using PCA while preserving 90% variance, achieving 95.9% test
+    accuracy and improved generalization compared to nonlinear manifold methods.
+  </p>
+  <div class="chips">
+    <span class="chip">PCA</span>
+    <span class="chip">Manifold Learning</span>
+    <span class="chip">Efficiency</span>
+  </div>
+</article>
+<article class="item">
+  <h3>Secure IoT Server Room Monitoring System</h3>
+  <div class="meta">
+    <span><i></i> AWS IoT Core</span>
+    <span><i></i> ESP32 · MQTT · TLS</span>
+    <span><i></i> Cloud + Embedded Systems</span>
+  </div>
+  <p class="desc">
+    Designed and implemented a secure, cloud-connected server room monitoring system using
+    ESP32 sensors and AWS IoT Core. Built an end-to-end pipeline with MQTT over TLS and
+    X.509 certificate authentication to stream real-time temperature and humidity telemetry.
+    Validated secure message delivery and device identity while enabling scalable cloud-side
+    monitoring and alerting.
+  </p>
+  <div class="chips">
+    <span class="chip">IoT Security</span>
+    <span class="chip">AWS</span>
+    <span class="chip">MQTT</span>
+    <span class="chip">TLS</span>
+  </div>
+</article>
+
+
           </div>
         </section>
       </div>
@@ -693,6 +794,7 @@
   </script>
 </body>
 </html>
+
 
 
 
